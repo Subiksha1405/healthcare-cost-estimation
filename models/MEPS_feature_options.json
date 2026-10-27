@@ -1,0 +1,662 @@
+{
+  "metadata": {
+    "title": "MEPS HC-256 Feature Options & Human-Readable Coding",
+    "source": "Agency for Healthcare Research and Quality (AHRQ)",
+    "survey_year": 2024,
+    "target": "TOTSLF24 (Out-of-Pocket Expenditure, $ USD)"
+  },
+  "numeric_features": {
+    "AGE24X": {
+      "name": "AGE24X",
+      "min": 0.0,
+      "max": 85.0,
+      "median": 46.0,
+      "default": 46.0,
+      "q25": 24.0,
+      "q75": 65.0
+    },
+    "FAMINC24": {
+      "name": "FAMINC24",
+      "min": -155693.0,
+      "max": 1038858.0,
+      "median": 79500.0,
+      "default": 79500.0,
+      "q25": 35000.0,
+      "q75": 145090.0
+    },
+    "POVLEV24": {
+      "name": "POVLEV24",
+      "min": -954.0,
+      "max": 5068.4,
+      "median": 326.07,
+      "default": 326.07,
+      "q25": 153.92,
+      "q75": 583.88
+    },
+    "FAMSZE24": {
+      "name": "FAMSZE24",
+      "min": 1.0,
+      "max": 13.0,
+      "median": 3.0,
+      "default": 3.0,
+      "q25": 2.0,
+      "q75": 4.0
+    },
+    "RUSIZE24": {
+      "name": "RUSIZE24",
+      "min": 1.0,
+      "max": 13.0,
+      "median": 3.0,
+      "default": 3.0,
+      "q25": 2.0,
+      "q75": 4.0
+    },
+    "EDUCYR": {
+      "name": "EDUCYR",
+      "min": 0.0,
+      "max": 17.0,
+      "median": 12.0,
+      "default": 12.0,
+      "q25": 10.0,
+      "q75": 16.0
+    }
+  },
+  "categorical_features": {
+    "SEX": {
+      "name": "SEX",
+      "default_code": 2,
+      "default_label": "Female",
+      "options": [
+        {
+          "code": 1,
+          "label": "Male"
+        },
+        {
+          "code": 2,
+          "label": "Female"
+        }
+      ]
+    },
+    "RACETHX": {
+      "name": "RACETHX",
+      "default_code": 2,
+      "default_label": "Non-Hispanic White",
+      "options": [
+        {
+          "code": 1,
+          "label": "Hispanic"
+        },
+        {
+          "code": 2,
+          "label": "Non-Hispanic White"
+        },
+        {
+          "code": 3,
+          "label": "Non-Hispanic Black"
+        },
+        {
+          "code": 4,
+          "label": "Non-Hispanic Asian"
+        },
+        {
+          "code": 5,
+          "label": "Non-Hispanic Other / Multiple Race"
+        }
+      ]
+    },
+    "HISPANX": {
+      "name": "HISPANX",
+      "default_code": 2,
+      "default_label": "Not Hispanic",
+      "options": [
+        {
+          "code": 1,
+          "label": "Hispanic"
+        },
+        {
+          "code": 2,
+          "label": "Not Hispanic"
+        }
+      ]
+    },
+    "MARRY24X": {
+      "name": "MARRY24X",
+      "default_code": 1,
+      "default_label": "Married",
+      "options": [
+        {
+          "code": 1,
+          "label": "Married"
+        },
+        {
+          "code": 2,
+          "label": "Widowed"
+        },
+        {
+          "code": 3,
+          "label": "Divorced"
+        },
+        {
+          "code": 4,
+          "label": "Separated"
+        },
+        {
+          "code": 5,
+          "label": "Never Married"
+        },
+        {
+          "code": 6,
+          "label": "Under 16 (Inapplicable)"
+        }
+      ]
+    },
+    "HIDEG": {
+      "name": "HIDEG",
+      "default_code": 3,
+      "default_label": "High School Diploma",
+      "options": [
+        {
+          "code": 1,
+          "label": "No Degree"
+        },
+        {
+          "code": 2,
+          "label": "GED"
+        },
+        {
+          "code": 3,
+          "label": "High School Diploma"
+        },
+        {
+          "code": 4,
+          "label": "Bachelor's Degree"
+        },
+        {
+          "code": 5,
+          "label": "Master's Degree"
+        },
+        {
+          "code": 6,
+          "label": "Doctorate Degree"
+        },
+        {
+          "code": 7,
+          "label": "Other Degree"
+        },
+        {
+          "code": 8,
+          "label": "Under 16 (Inapplicable)"
+        }
+      ]
+    },
+    "REGION24": {
+      "name": "REGION24",
+      "default_code": 3,
+      "default_label": "South",
+      "options": [
+        {
+          "code": 1,
+          "label": "Northeast"
+        },
+        {
+          "code": 2,
+          "label": "Midwest"
+        },
+        {
+          "code": 3,
+          "label": "South"
+        },
+        {
+          "code": 4,
+          "label": "West"
+        }
+      ]
+    },
+    "RUCLAS24": {
+      "name": "RUCLAS24",
+      "default_code": 1,
+      "default_label": "Standard RU",
+      "options": [
+        {
+          "code": 1,
+          "label": "Standard RU"
+        },
+        {
+          "code": 2,
+          "label": "New RU"
+        },
+        {
+          "code": 3,
+          "label": "Student RU"
+        }
+      ]
+    },
+    "POVCAT24": {
+      "name": "POVCAT24",
+      "default_code": 5,
+      "default_label": "High Income (>=400% FPL)",
+      "options": [
+        {
+          "code": 1,
+          "label": "Poor / Negative (<100% FPL)"
+        },
+        {
+          "code": 2,
+          "label": "Near Poor (100% to <125% FPL)"
+        },
+        {
+          "code": 3,
+          "label": "Low Income (125% to <200% FPL)"
+        },
+        {
+          "code": 4,
+          "label": "Middle Income (200% to <400% FPL)"
+        },
+        {
+          "code": 5,
+          "label": "High Income (>=400% FPL)"
+        }
+      ]
+    },
+    "INSCOV24": {
+      "name": "INSCOV24",
+      "default_code": 1,
+      "default_label": "Any Private",
+      "options": [
+        {
+          "code": 1,
+          "label": "Any Private"
+        },
+        {
+          "code": 2,
+          "label": "Public Only"
+        },
+        {
+          "code": 3,
+          "label": "Uninsured"
+        }
+      ]
+    },
+    "INSURC24": {
+      "name": "INSURC24",
+      "default_code": 1,
+      "default_label": "<65 Any Private",
+      "options": [
+        {
+          "code": 1,
+          "label": "<65 Any Private"
+        },
+        {
+          "code": 2,
+          "label": "<65 Public Only"
+        },
+        {
+          "code": 3,
+          "label": "<65 Uninsured"
+        },
+        {
+          "code": 4,
+          "label": "65+ Medicare Only"
+        },
+        {
+          "code": 5,
+          "label": "65+ Medicare & Private"
+        },
+        {
+          "code": 6,
+          "label": "65+ Medicare & Other Public"
+        },
+        {
+          "code": 7,
+          "label": "65+ Uninsured"
+        },
+        {
+          "code": 8,
+          "label": "65+ No Medicare & Any Public/Private"
+        }
+      ]
+    },
+    "UNINS24": {
+      "name": "UNINS24",
+      "default_code": 2,
+      "default_label": "No (Had Coverage)",
+      "options": [
+        {
+          "code": 1,
+          "label": "Yes (Uninsured Full Year)"
+        },
+        {
+          "code": 2,
+          "label": "No (Had Coverage)"
+        }
+      ]
+    },
+    "PRVEV24": {
+      "name": "PRVEV24",
+      "default_code": 1,
+      "default_label": "Yes",
+      "options": [
+        {
+          "code": 1,
+          "label": "Yes"
+        },
+        {
+          "code": 2,
+          "label": "No"
+        }
+      ]
+    },
+    "MCREV24": {
+      "name": "MCREV24",
+      "default_code": 2,
+      "default_label": "No",
+      "options": [
+        {
+          "code": 1,
+          "label": "Yes"
+        },
+        {
+          "code": 2,
+          "label": "No"
+        }
+      ]
+    },
+    "MCDEV24": {
+      "name": "MCDEV24",
+      "default_code": 2,
+      "default_label": "No",
+      "options": [
+        {
+          "code": 1,
+          "label": "Yes"
+        },
+        {
+          "code": 2,
+          "label": "No"
+        }
+      ]
+    },
+    "TRIEV24": {
+      "name": "TRIEV24",
+      "default_code": 2,
+      "default_label": "No",
+      "options": [
+        {
+          "code": 1,
+          "label": "Yes"
+        },
+        {
+          "code": 2,
+          "label": "No"
+        }
+      ]
+    },
+    "VAEV24": {
+      "name": "VAEV24",
+      "default_code": 2,
+      "default_label": "No",
+      "options": [
+        {
+          "code": 1,
+          "label": "Yes"
+        },
+        {
+          "code": 2,
+          "label": "No"
+        }
+      ]
+    },
+    "RTHLTH31": {
+      "name": "RTHLTH31",
+      "default_code": 2,
+      "default_label": "Very Good",
+      "options": [
+        {
+          "code": 1,
+          "label": "Excellent"
+        },
+        {
+          "code": 2,
+          "label": "Very Good"
+        },
+        {
+          "code": 3,
+          "label": "Good"
+        },
+        {
+          "code": 4,
+          "label": "Fair"
+        },
+        {
+          "code": 5,
+          "label": "Poor"
+        }
+      ]
+    },
+    "MNHLTH31": {
+      "name": "MNHLTH31",
+      "default_code": 1,
+      "default_label": "Excellent",
+      "options": [
+        {
+          "code": 1,
+          "label": "Excellent"
+        },
+        {
+          "code": 2,
+          "label": "Very Good"
+        },
+        {
+          "code": 3,
+          "label": "Good"
+        },
+        {
+          "code": 4,
+          "label": "Fair"
+        },
+        {
+          "code": 5,
+          "label": "Poor"
+        }
+      ]
+    },
+    "HIBPDX": {
+      "name": "HIBPDX",
+      "default_code": 2,
+      "default_label": "No",
+      "options": [
+        {
+          "code": 1,
+          "label": "Yes (Diagnosed)"
+        },
+        {
+          "code": 2,
+          "label": "No"
+        },
+        {
+          "code": 3,
+          "label": "Inapplicable (Under 18)"
+        }
+      ]
+    },
+    "CHDDX": {
+      "name": "CHDDX",
+      "default_code": 2,
+      "default_label": "No",
+      "options": [
+        {
+          "code": 1,
+          "label": "Yes (Diagnosed)"
+        },
+        {
+          "code": 2,
+          "label": "No"
+        },
+        {
+          "code": 3,
+          "label": "Inapplicable (Under 18)"
+        }
+      ]
+    },
+    "DIABDX_M18": {
+      "name": "DIABDX_M18",
+      "default_code": 2,
+      "default_label": "No",
+      "options": [
+        {
+          "code": 1,
+          "label": "Yes (Diagnosed)"
+        },
+        {
+          "code": 2,
+          "label": "No"
+        },
+        {
+          "code": 3,
+          "label": "Inapplicable (Under 18)"
+        }
+      ]
+    },
+    "ASTHDX": {
+      "name": "ASTHDX",
+      "default_code": 2,
+      "default_label": "No",
+      "options": [
+        {
+          "code": 1,
+          "label": "Yes (Diagnosed)"
+        },
+        {
+          "code": 2,
+          "label": "No"
+        },
+        {
+          "code": 3,
+          "label": "Inapplicable (Under 18)"
+        }
+      ]
+    },
+    "ARTHDX": {
+      "name": "ARTHDX",
+      "default_code": 2,
+      "default_label": "No",
+      "options": [
+        {
+          "code": 1,
+          "label": "Yes (Diagnosed)"
+        },
+        {
+          "code": 2,
+          "label": "No"
+        },
+        {
+          "code": 3,
+          "label": "Inapplicable (Under 18)"
+        }
+      ]
+    },
+    "CANCERDX": {
+      "name": "CANCERDX",
+      "default_code": 2,
+      "default_label": "No",
+      "options": [
+        {
+          "code": 1,
+          "label": "Yes (Diagnosed)"
+        },
+        {
+          "code": 2,
+          "label": "No"
+        },
+        {
+          "code": 3,
+          "label": "Inapplicable (Under 18)"
+        }
+      ]
+    },
+    "STRKDX": {
+      "name": "STRKDX",
+      "default_code": 2,
+      "default_label": "No",
+      "options": [
+        {
+          "code": 1,
+          "label": "Yes (Diagnosed)"
+        },
+        {
+          "code": 2,
+          "label": "No"
+        },
+        {
+          "code": 3,
+          "label": "Inapplicable (Under 18)"
+        }
+      ]
+    },
+    "CHBRON31": {
+      "name": "CHBRON31",
+      "default_code": 2,
+      "default_label": "No",
+      "options": [
+        {
+          "code": 1,
+          "label": "Yes (Diagnosed)"
+        },
+        {
+          "code": 2,
+          "label": "No"
+        },
+        {
+          "code": 3,
+          "label": "Inapplicable (Under 18)"
+        }
+      ]
+    },
+    "CHOLDX": {
+      "name": "CHOLDX",
+      "default_code": 2,
+      "default_label": "No",
+      "options": [
+        {
+          "code": 1,
+          "label": "Yes (Diagnosed)"
+        },
+        {
+          "code": 2,
+          "label": "No"
+        },
+        {
+          "code": 3,
+          "label": "Inapplicable (Under 18)"
+        }
+      ]
+    },
+    "EMPST31": {
+      "name": "EMPST31",
+      "default_code": 1,
+      "default_label": "Employed at Interview Date",
+      "options": [
+        {
+          "code": 1,
+          "label": "Employed at Interview Date"
+        },
+        {
+          "code": 2,
+          "label": "Has Job to Return to"
+        },
+        {
+          "code": 3,
+          "label": "Employed During Reference Period"
+        },
+        {
+          "code": 4,
+          "label": "Not Employed"
+        },
+        {
+          "code": 5,
+          "label": "Inapplicable (Under 16)"
+        }
+      ]
+    }
+  }
+}

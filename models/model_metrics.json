@@ -1,0 +1,231 @@
+{
+  "dataset_metadata": {
+    "source": "Medical Expenditure Panel Survey (MEPS) HC-256 (2024 Full Year)",
+    "agency": "Agency for Healthcare Research and Quality (AHRQ)",
+    "target_variable": "TOTSLF24",
+    "target_description": "Total Annual Out-of-Pocket Healthcare Expenditure ($ USD)",
+    "total_cleaned_observations": 18526,
+    "train_observations": 11115,
+    "calibration_observations": 3705,
+    "test_observations": 3706,
+    "random_seed": 42
+  },
+  "model_architecture": {
+    "framework": "Normalized Split Conformal Prediction",
+    "point_estimator": "HistGradientBoostingRegressor (log1p transformed)",
+    "dispersion_estimator": "HistGradientBoostingRegressor (log residual scale)",
+    "scale_floor": 0.7719230518685183,
+    "target_transformation": "log(1 + y) with exp(y) - 1 inversion"
+  },
+  "test_evaluations": {
+    "confidence_90": {
+      "nominal_coverage": 0.9,
+      "empirical_coverage": 0.909066378845116,
+      "conformal_quantile_q": 2.942662006365844,
+      "mean_interval_width": 8272.766463424965,
+      "median_interval_width": 6249.635090742204,
+      "min_interval_width": 10.8700812381394,
+      "max_interval_width": 95506.73404640227,
+      "zero_spenders_coverage": 0.8181818181818182,
+      "nonzero_spenders_coverage": 0.9426987060998152,
+      "mae": 904.650071621549,
+      "rmse": 3017.0469452035327,
+      "r2": 0.0013510695126930372,
+      "median_absolute_error": 174.66823676107296
+    },
+    "confidence_80": {
+      "nominal_coverage": 0.8,
+      "empirical_coverage": 0.8181327576902321,
+      "conformal_quantile_q": 2.2659618616613484,
+      "mean_interval_width": 3674.3490788303916,
+      "median_interval_width": 2522.5311557383284
+    },
+    "confidence_95": {
+      "nominal_coverage": 0.95,
+      "empirical_coverage": 0.9541284403669725,
+      "conformal_quantile_q": 3.637620124058602,
+      "mean_interval_width": 19756.77123656221,
+      "median_interval_width": 14895.78554346291
+    }
+  },
+  "subgroup_performance": {
+    "Age_Group": [
+      {
+        "Age_Group": "0-17 (Children)",
+        "Count": 710,
+        "Empirical_Coverage": 0.9140845070422535,
+        "Mean_Interval_Width": 3548.343039340369,
+        "Median_Interval_Width": 1369.4686712514165,
+        "MAE": 393.78760406848653
+      },
+      {
+        "Age_Group": "18-44 (Young Adults)",
+        "Count": 1076,
+        "Empirical_Coverage": 0.9358736059479554,
+        "Mean_Interval_Width": 8068.950502851997,
+        "Median_Interval_Width": 4486.633297055911,
+        "MAE": 605.6735072176656
+      },
+      {
+        "Age_Group": "45-64 (Middle-Aged)",
+        "Count": 974,
+        "Empirical_Coverage": 0.8901437371663244,
+        "Mean_Interval_Width": 9363.983483990272,
+        "Median_Interval_Width": 7547.852591641,
+        "MAE": 1103.573343265853
+      },
+      {
+        "Age_Group": "65-85 (Older Adults)",
+        "Count": 946,
+        "Empirical_Coverage": 0.8942917547568711,
+        "Mean_Interval_Width": 10926.890381655374,
+        "Median_Interval_Width": 9959.098925873015,
+        "MAE": 1423.318008915102
+      }
+    ],
+    "Insurance": [
+      {
+        "Insurance": "Any Private",
+        "Count": 2104,
+        "Empirical_Coverage": 0.9111216730038023,
+        "Mean_Interval_Width": 10967.196232469287,
+        "Median_Interval_Width": 8804.309563757619,
+        "MAE": 1085.2155399478386
+      },
+      {
+        "Insurance": "Public Only",
+        "Count": 1336,
+        "Empirical_Coverage": 0.9034431137724551,
+        "Mean_Interval_Width": 5215.421623001046,
+        "Median_Interval_Width": 2055.311047343448,
+        "MAE": 703.0000086612989
+      },
+      {
+        "Insurance": "Uninsured",
+        "Count": 266,
+        "Empirical_Coverage": 0.9210526315789473,
+        "Mean_Interval_Width": 2316.121624090758,
+        "Median_Interval_Width": 1033.86470340063,
+        "MAE": 489.2167586756124
+      }
+    ],
+    "Poverty_Category": [
+      {
+        "Poverty_Category": "High Income (>=400% FPL)",
+        "Count": 1541,
+        "Empirical_Coverage": 0.8955223880597015,
+        "Mean_Interval_Width": 12022.752876909373,
+        "Median_Interval_Width": 10238.052445565332,
+        "MAE": 1285.677337729479
+      },
+      {
+        "Poverty_Category": "Low Income (125% - 199% FPL)",
+        "Count": 441,
+        "Empirical_Coverage": 0.9342403628117913,
+        "Mean_Interval_Width": 4878.043745706577,
+        "Median_Interval_Width": 2392.0045762259315,
+        "MAE": 789.0749200714649
+      },
+      {
+        "Poverty_Category": "Middle Income (200% - 399% FPL)",
+        "Count": 987,
+        "Empirical_Coverage": 0.9189463019250254,
+        "Mean_Interval_Width": 8100.045653108934,
+        "Median_Interval_Width": 6134.686832972766,
+        "MAE": 745.7459697580673
+      },
+      {
+        "Poverty_Category": "Near Poor (100% - 124% FPL)",
+        "Count": 148,
+        "Empirical_Coverage": 0.9054054054054054,
+        "Mean_Interval_Width": 3169.6079165024125,
+        "Median_Interval_Width": 1609.6676938205321,
+        "MAE": 501.3297461693324
+      },
+      {
+        "Poverty_Category": "Poor / Negative (<100% FPL)",
+        "Count": 589,
+        "Empirical_Coverage": 0.9100169779286927,
+        "Mean_Interval_Width": 2575.120555208995,
+        "Median_Interval_Width": 805.925750627692,
+        "MAE": 361.9257617190894
+      }
+    ],
+    "Health_Status": [
+      {
+        "Health_Status": "1 - Excellent",
+        "Count": 964,
+        "Empirical_Coverage": 0.9139004149377593,
+        "Mean_Interval_Width": 5717.924316765248,
+        "Median_Interval_Width": 4576.938284621522,
+        "MAE": 714.8227979492274
+      },
+      {
+        "Health_Status": "2 - Very Good",
+        "Count": 1180,
+        "Empirical_Coverage": 0.9177966101694915,
+        "Mean_Interval_Width": 9694.870500205561,
+        "Median_Interval_Width": 8128.60171849293,
+        "MAE": 993.4732594265423
+      },
+      {
+        "Health_Status": "3 - Good",
+        "Count": 1066,
+        "Empirical_Coverage": 0.9080675422138836,
+        "Mean_Interval_Width": 7717.705393899846,
+        "Median_Interval_Width": 6108.510260930361,
+        "MAE": 821.7169671604531
+      },
+      {
+        "Health_Status": "4 - Fair",
+        "Count": 380,
+        "Empirical_Coverage": 0.8894736842105263,
+        "Mean_Interval_Width": 10172.728101223125,
+        "Median_Interval_Width": 6348.61494747096,
+        "MAE": 979.439394837046
+      },
+      {
+        "Health_Status": "5 - Poor",
+        "Count": 116,
+        "Empirical_Coverage": 0.853448275862069,
+        "Mean_Interval_Width": 13914.962530057184,
+        "Median_Interval_Width": 9317.95621631984,
+        "MAE": 2095.761078034182
+      }
+    ],
+    "Chronic_Category": [
+      {
+        "Chronic_Category": "0 conditions",
+        "Count": 1673,
+        "Empirical_Coverage": 0.9187089061566049,
+        "Mean_Interval_Width": 6258.90990456012,
+        "Median_Interval_Width": 3539.688117544273,
+        "MAE": 509.4820642756
+      },
+      {
+        "Chronic_Category": "1 condition",
+        "Count": 719,
+        "Empirical_Coverage": 0.9179415855354659,
+        "Mean_Interval_Width": 9402.556812860088,
+        "Median_Interval_Width": 6624.637915765169,
+        "MAE": 914.535047169314
+      },
+      {
+        "Chronic_Category": "2 conditions",
+        "Count": 474,
+        "Empirical_Coverage": 0.9008438818565401,
+        "Mean_Interval_Width": 9062.570267815487,
+        "Median_Interval_Width": 7462.878404011413,
+        "MAE": 1098.7943939119934
+      },
+      {
+        "Chronic_Category": "3+ conditions",
+        "Count": 840,
+        "Empirical_Coverage": 0.8869047619047619,
+        "Mean_Interval_Width": 10870.975699682018,
+        "Median_Interval_Width": 9945.045210417738,
+        "MAE": 1573.6790836516193
+      }
+    ]
+  }
+}
